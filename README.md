@@ -1,0 +1,3 @@
+# JavaEnvironmentVariableSetting
+Java Environment Variable Setting
+这是一个用来一键设置Java环境变量的小工具
