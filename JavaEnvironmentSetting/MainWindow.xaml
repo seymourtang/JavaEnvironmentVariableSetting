@@ -1,0 +1,44 @@
+﻿<controls:MetroWindow x:Class="JavaEnvironmentSetting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JavaEnvironmentSetting"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="Java Environment Variable Setting" MaxHeight="250" MaxWidth="450" MinHeight="250" MinWidth="450" Height="250" Width="450" controls:ControlsHelper.ContentCharacterCasing="Upper" OverlayBrush="Black" BorderThickness="1" IsMaxRestoreButtonEnabled="False" ShowMaxRestoreButton="False" ShowSystemMenuOnRightClick="False" TitleAlignment="Left" FontFamily="DengXian Light" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.8*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Center" 
+              VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal">
+                <Label FontSize="14">
+                    JDK目录路径:
+                </Label>
+                <TextBox IsReadOnly="True" 
+                         Height="25"
+                         Width="200" 
+                         Text="C:\\"/>
+                <Button x:Name="BtnSearchFolder" 
+                        Margin="5,0,0,0">
+                    open jdk folder
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Button x:Name="BtnSetClick" 
+                Grid.Row="1" 
+                HorizontalAlignment="Center" 
+                Width="200" 
+                VerticalAlignment="Center">
+            Go!
+        </Button>
+        <GroupBox Grid.Row="2" 
+                  Header="output">
+            <RichTextBox x:Name="RtbResult"/>
+        </GroupBox>
+    </Grid>
+</controls:MetroWindow>
