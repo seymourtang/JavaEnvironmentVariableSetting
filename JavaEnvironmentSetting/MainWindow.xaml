@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:JavaEnvironmentSetting"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="Java Environment Variable Setting" MaxHeight="250" MaxWidth="450" MinHeight="250" MinWidth="450" Height="250" Width="450" controls:ControlsHelper.ContentCharacterCasing="Upper" OverlayBrush="Black" BorderThickness="1" IsMaxRestoreButtonEnabled="False" ShowMaxRestoreButton="False" ShowSystemMenuOnRightClick="False" TitleAlignment="Left" FontFamily="DengXian Light" WindowStartupLocation="CenterScreen">
+        Title="Java Environment Variable Setting" MaxHeight="250" MaxWidth="450" MinHeight="250" MinWidth="450" Height="250" Width="450" controls:ControlsHelper.ContentCharacterCasing="Upper" OverlayBrush="Black" BorderThickness="1" IsMaxRestoreButtonEnabled="False" ShowMaxRestoreButton="False" ShowSystemMenuOnRightClick="False" TitleAlignment="Left" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -16,20 +16,23 @@
         <Grid HorizontalAlignment="Center" 
               VerticalAlignment="Bottom">
             <StackPanel Orientation="Horizontal">
-                <Label FontSize="14">
-                    JDK目录路径:
+                <Label FontSize="14" Content="JDK FOLDERPATH:">
                 </Label>
-                <TextBox IsReadOnly="True" 
+                <TextBox IsReadOnly="True"
+                         x:Name="FolderPathName"
                          Height="25"
                          Width="200" 
-                         Text="C:\\"/>
-                <Button x:Name="BtnSearchFolder" 
+                         MouseDoubleClick="BtnSearchFolder_Click"
+                         controls:TextBoxHelper.Watermark="Chose folder path"/>
+                <Button x:Name="BtnSearchFolder"
+                        Click="BtnSearchFolder_Click"
                         Margin="5,0,0,0">
                     open jdk folder
                 </Button>
             </StackPanel>
         </Grid>
         <Button x:Name="BtnSetClick" 
+                Click="BtnSetClick_Click"
                 Grid.Row="1" 
                 HorizontalAlignment="Center" 
                 Width="200" 
@@ -38,7 +41,8 @@
         </Button>
         <GroupBox Grid.Row="2" 
                   Header="output">
-            <RichTextBox x:Name="RtbResult"/>
+            <RichTextBox x:Name="RtbResult"
+                         IsReadOnly="True"/>
         </GroupBox>
     </Grid>
 </controls:MetroWindow>
